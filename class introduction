@@ -1,0 +1,33 @@
+import random
+channels = ['bbc 1','bbc 2','bbc 3','bbc 4','discovery channel']
+
+class Television(object):
+    """simulates television controls using classes"""
+    def __init__(self,channel,volume,power):
+        self.power = power #attributes
+        self.volume = volume
+        self.channel = channel
+    def __str__(self):
+        y = x = "current settings:\n"
+        if self.power == False:
+            y+="power is currently 'off'"
+        else:
+            y+="power is currently 'on'"
+        return y
+    def changechannel(self):
+        d = input("\npower status?: ")
+        power_choice = d.lower()
+        if power_choice == 'on' or power_choice == 'true':
+            self.power = True
+        elif power_choice == 'off' or power_choice == 'false':
+            self.power = False
+        else:
+            print("valid entries - on/true and off/false")
+            self.changechannel()
+        print(tv)
+tv = Television(random.choice(channels),60,False)
+print(tv)
+
+def main():
+    tv.changechannel()
+main()
